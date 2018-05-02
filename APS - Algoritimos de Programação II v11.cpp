@@ -1,12 +1,9 @@
-//Desenvolvimento APS - Algoritimos de Programalção II
+//Desenvolvimento APS - Algoritimos de ProgramalÃ§Ã£o II
 //Alunos: Marcelo Henrique Cezario / Gabryel Johnatan Boeira
 //E-mails: marcelocezario@gmail.com / gabryel392@gmail.com
 
-#include "APS - Algoritimos de Programação II.h"
-
-//Alterações importantes antes de finalizar:
-//*alterar o valor de inicialização de iNumCadCc para 0 na declaração da variavel e excluir dados pré-preechidos do struct;
-
+//Bilblioteca criada, manter no mesmo diretorio.
+#include "APS - Algoritimos de ProgramaÃ§Ã£o II.h"
 
 int main ()
 {
