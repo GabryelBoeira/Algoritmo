@@ -1,4 +1,4 @@
-//Biblioteca - Desenvolvimento APS - Algoritimos de ProgramalÁ„o II
+//Biblioteca - Desenvolvimento APS - Algoritimos de Programal√ß√£o II
 //Alunos: Marcelo Henrique Cezario / Gabryel Johnatan Boeira
 //E-mails: marcelocezario@gmail.com / gabryel392@gmail.com
 
@@ -39,7 +39,7 @@ struct tipo_ContaCorrente stcContaCorrente[NUMEROCADASTROS]={
 };;
 
 
-void cabmenuprincipal ()	//exibe o cabeÁalho do menu principal
+void cabmenuprincipal ()	//exibe o cabe√ßalho do menu principal
 {
 	system("cls");
 	printf("=====================================================================\n");
@@ -53,7 +53,7 @@ void cabmenuprincipal ()	//exibe o cabeÁalho do menu principal
 	printf("=====================================================================\n");
 }
 
-void cabcadastrocc ()	//exibe o cabeÁalho cadastrar conta
+void cabcadastrocc ()	//exibe o cabe√ßalho cadastrar conta
 {
 	system("cls");
 	printf("=====================================================================\n");
@@ -66,7 +66,7 @@ void cabcadastrocc ()	//exibe o cabeÁalho cadastrar conta
 	printf("|                                                                   |\n");
 	printf("=====================================================================\n");
 }
-void cablistarcc()		//exibe o cabeÁalho listar contas
+void cablistarcc()		//exibe o cabe√ßalho listar contas
 {
 	system("cls");
 	printf("=====================================================================\n");
@@ -79,7 +79,7 @@ void cablistarcc()		//exibe o cabeÁalho listar contas
 	printf("|                                                                   |\n");
 	printf("=====================================================================\n");
 }
-void cabexcluircc()		//exibe o cabeÁalho excluir conta
+void cabexcluircc()		//exibe o cabe√ßalho excluir conta
 {
 	system("cls");
 	printf("=====================================================================\n");
@@ -99,7 +99,7 @@ void cadastrarcontas ()	//cadastra novas contas, utilizado a variavel 'x' apenas
 	
 	if (iNumCadCc>=NUMEROCADASTROS)
 	{
-		printf("\nNumero limite de cadastros excedido, exclua algum cadastro antigo para novo lanÁamento!\n");
+		printf("\nNumero limite de cadastros excedido, exclua algum cadastro antigo para novo lan√ßamento!\n");
 	}
 	else
 	{
@@ -111,8 +111,6 @@ void cadastrarcontas ()	//cadastra novas contas, utilizado a variavel 'x' apenas
 				{
 					if(stcContaCorrente[x].iContaCorrente==stcContaCorrente[i].iContaCorrente)
 					{
-//da forma como fez funciona, mas fica muito estranho. 
-//fale comigo na aula que te explico uma maneira melhor e mais facil de entender.
 						printf("Numero de conta ja cadastrado!!\n");
 						i=-1;
 						printf("\nEntre com o numero da conta: ");
@@ -121,17 +119,17 @@ void cadastrarcontas ()	//cadastra novas contas, utilizado a variavel 'x' apenas
 				}
 				if (stcContaCorrente[x].iContaCorrente==0)
 //Geraldo-> nao se faz condicionais sem nada a executar. 
-//o que se faz È testar o contrario, por exemplo neste caso testaria se o 
-//valor È diferente de zero e executaria no then o que est· no else.
+//o que se faz √© testar o contrario, por exemplo neste caso testaria se o 
+//valor √© diferente de zero e executaria no then o que est√° no else.
 				{
 				}
 				else if (stcContaCorrente[x].iContaCorrente < 100)
 				{
-//a identaÁ„o n„o est· boa. os comandos abaixo dependem do if e nao do else 
-//(claro que tambem dependem do else, mas dependem da decis„o do if)
+//a identa√ß√£o n√£o est√° boa. os comandos abaixo dependem do if e nao do else 
+//(claro que tambem dependem do else, mas dependem da decis√£o do if)
 //portanto deveriam estar mais a direita, inclusive o { e }
 					printf("Numero da conta nao deve ser menor que 100!!\n\n");
-//n„o È legal pedir o numero da conta em v·rios pontos diferentes do cadastrar.
+//n√£o √© legal pedir o numero da conta em v√°rios pontos diferentes do cadastrar.
 //fale comigo na aula que te mostro uma maneira melhor.
 					printf("\nEntre com o numero da conta: ");
 					scanf("%d", &stcContaCorrente[x].iContaCorrente);
@@ -180,7 +178,7 @@ void cadastrarcontas ()	//cadastra novas contas, utilizado a variavel 'x' apenas
 	}
 }
 
-int listarcontas (int x)	//lista as contas correntes cadastradas, 'x' È numero de contas ja cadastradas
+int listarcontas (int x)	//lista as contas correntes cadastradas, 'x' √© numero de contas ja cadastradas
 {
 	if(x==0)
 	{
@@ -219,14 +217,14 @@ void excluircontas ()
 	{
 		while(iContaExcluir!=0)
 		{
-//È interessante que o conteudo da variavel seja coerente com o seu nome
+//√© interessante que o conteudo da variavel seja coerente com o seu nome
 //por exemplo, uma variavel chamada icontanaocadastrada seria verdadeiro se 
-//a conta n„o fosse cadastrada e seria falsa se a conta fosse cadastrada.
-//como zero È falso e 1 È verdadeiro, voce est· inserindo os valores ao
-//contr·rio na variavel. Outra dica È procurar usar variaveis positivas  e
-//n„o negativas, por exemplo, no lugar de iContaNaoCadastrada, use
-// iContaCadastrada. Se usar a variavel iContaCadastrada, ent„o estar· 
-//correto inserir zero quando quiser indicar que conta n„o est· cadastrada
+//a conta n√£o fosse cadastrada e seria falsa se a conta fosse cadastrada.
+//como zero √© falso e 1 √© verdadeiro, voce est√° inserindo os valores ao
+//contr√°rio na variavel. Outra dica √© procurar usar variaveis positivas  e
+//n√£o negativas, por exemplo, no lugar de iContaNaoCadastrada, use
+// iContaCadastrada. Se usar a variavel iContaCadastrada, ent√£o estar√° 
+//correto inserir zero quando quiser indicar que conta n√£o est√° cadastrada
 //e 1 quando a conta estiver cadastrada.
 			iContaNaoCadastrada=0;
 			for (x=0;x<iNumCadCc;x++)
@@ -236,7 +234,7 @@ void excluircontas ()
 					iContaNaoCadastrada=1;
 					iVetorExcluir = x;
 					fflush(stdin);
-//a ideia È imprimir todos os dados da conta antes de confirmar a exclus„o.
+//a ideia √© imprimir todos os dados da conta antes de confirmar a exclus√£o.
 					printf("\nTem certeza que deseja excluir a conta %d em nome de %s (S/N)? ", stcContaCorrente[iVetorExcluir].iContaCorrente, stcContaCorrente[iVetorExcluir].strNome);
 					scanf("%c", &cOpcao);
 					switch(cOpcao)
