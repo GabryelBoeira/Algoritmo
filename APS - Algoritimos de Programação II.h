@@ -9,7 +9,7 @@
 #include <time.h>
 #include <conio.h>
 #include <windows.h>
-#define NUMEROCADASTROS 1000
+#define NUMEROCADASTROS 3
 
 
 //definindo struct stcContaCorrente e int iNumCadCc como variaveis globais
@@ -33,9 +33,9 @@ struct tipo_ContaCorrente
 	char strEmail[51];
 };
 struct tipo_ContaCorrente stcContaCorrente[NUMEROCADASTROS]={
-	100,"Marcelo Henrique Cezario",{"Rua Teste",111,"Apto 101","Costeira","Sao Jose dos Pinhais","PR"},"marcelocezario@gmail.com",
-	101,"Carlos Jose Cezario",{"Rua Novo Teste",222,"","Pinheirinho","Curitiba","PR"},"teste@gmail.com",
-	102,"Elisa Margarete Karpinski",{"Avenida Ultimo Teste",33333,"Apto 1303","Centro","Pinhais","PR"},"novoteste@hotmail.com"
+	100,"Fulano da Silva Santos",{"Rua Teste",111,"Apto 101","Costeira","Sao Jose dos Pinhais","PR"},"fulano@gmail.com",
+	101,"Beltrano Correia",{"Rua Novo Teste",222,"","Pinheirinho","Curitiba","PR"},"teste@gmail.com",
+	102,"Joãozinho Pereira Pinto",{"Avenida Ultimo Teste",33333,"Apto 1303","Centro","Pinhais","PR"},"novoteste@hotmail.com"
 };;
 
 
@@ -118,19 +118,11 @@ void cadastrarcontas ()	//cadastra novas contas, utilizado a variavel 'x' apenas
 					}
 				}
 				if (stcContaCorrente[x].iContaCorrente==0)
-//Geraldo-> nao se faz condicionais sem nada a executar. 
-//o que se faz é testar o contrario, por exemplo neste caso testaria se o 
-//valor é diferente de zero e executaria no then o que está no else.
 				{
 				}
 				else if (stcContaCorrente[x].iContaCorrente < 100)
 				{
-//a identação não está boa. os comandos abaixo dependem do if e nao do else 
-//(claro que tambem dependem do else, mas dependem da decisão do if)
-//portanto deveriam estar mais a direita, inclusive o { e }
 					printf("Numero da conta nao deve ser menor que 100!!\n\n");
-//não é legal pedir o numero da conta em vários pontos diferentes do cadastrar.
-//fale comigo na aula que te mostro uma maneira melhor.
 					printf("\nEntre com o numero da conta: ");
 					scanf("%d", &stcContaCorrente[x].iContaCorrente);
 				}
@@ -217,15 +209,6 @@ void excluircontas ()
 	{
 		while(iContaExcluir!=0)
 		{
-//é interessante que o conteudo da variavel seja coerente com o seu nome
-//por exemplo, uma variavel chamada icontanaocadastrada seria verdadeiro se 
-//a conta não fosse cadastrada e seria falsa se a conta fosse cadastrada.
-//como zero é falso e 1 é verdadeiro, voce está inserindo os valores ao
-//contrário na variavel. Outra dica é procurar usar variaveis positivas  e
-//não negativas, por exemplo, no lugar de iContaNaoCadastrada, use
-// iContaCadastrada. Se usar a variavel iContaCadastrada, então estará 
-//correto inserir zero quando quiser indicar que conta não está cadastrada
-//e 1 quando a conta estiver cadastrada.
 			iContaNaoCadastrada=0;
 			for (x=0;x<iNumCadCc;x++)
 			{
@@ -234,7 +217,6 @@ void excluircontas ()
 					iContaNaoCadastrada=1;
 					iVetorExcluir = x;
 					fflush(stdin);
-//a ideia é imprimir todos os dados da conta antes de confirmar a exclusão.
 					printf("\nTem certeza que deseja excluir a conta %d em nome de %s (S/N)? ", stcContaCorrente[iVetorExcluir].iContaCorrente, stcContaCorrente[iVetorExcluir].strNome);
 					scanf("%c", &cOpcao);
 					switch(cOpcao)
